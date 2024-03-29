@@ -1,16 +1,10 @@
-import { useContext } from "react";
-import { DataContext } from "../context/DataProvider";
-
-const Card = () => {
-  const { products } = useContext(DataContext);
-  // console.log(products);
+const Card = ({ title, image, price, description }) => {
   return (
     <>
-      <h1>list of products</h1>
-      <hr />
-      {products.map((product) => (
-        <li key={product.id}>{product.title}</li>
-      ))}
+      <h4>{title}</h4>
+      <img src={image} alt="product-img" />
+      <p>{price}</p>
+      <p>{description}</p>
     </>
   );
 };
